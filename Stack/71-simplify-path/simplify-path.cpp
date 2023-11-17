@@ -64,6 +64,11 @@ public:
         
         // Call the helper function to build the final result string
         buildAns(st, ans);
+                //simply agar while(!st.empty()){ 
+        
+//             ans = ans + st.top();
+        
+//        } tab ye hotaa emoh/ joh wrong ho jaataaa
         
         return ans;
     }
