@@ -74,6 +74,9 @@ public:
         }
 
         // Find the maximum area in the areaArr vector.
+
+        //The max_element function returns an iterator pointing to the maximum element in the range [first, last).
+        //The * (dereference operator) is used to obtain the actual value pointed to by the iterator.
         int maxElement = *max_element(areaArr.begin(), areaArr.end());
 
         return maxElement;
