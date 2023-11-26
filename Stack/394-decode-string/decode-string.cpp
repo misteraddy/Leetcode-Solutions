@@ -35,6 +35,9 @@ public:
 
             string numericTimes = "";
             // Pop digits from the stack to determine the repetition count
+            // isdigit(st.top()[0]): This part checks if the first character of the top element of the stack is a digit.
+            // The isdigit function is a standard C++ function that returns true if the given character is a decimal digit (0-9).
+            
             while (!st.empty() && isdigit(st.top()[0])) {
                 numericTimes += st.top();
                 st.pop();
