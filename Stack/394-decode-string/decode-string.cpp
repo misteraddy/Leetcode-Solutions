@@ -55,7 +55,7 @@ public:
             st.push(decodedValue);  // Push the decoded value back onto the stack
             repeatstring = "";      // Reset repeatstring for the next iteration
         } else {
-            string temp(1, ch);
+            string temp(1, ch); // iss ch character hai isko string mei convert kar rahe hai . the 1 is the size of the string .
             st.push(temp);  // Push individual characters onto the stack
         }
     }
