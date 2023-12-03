@@ -21,6 +21,13 @@ The Time Limit Exceeded (TLE) issue in your code is likely due to the inefficien
             dq.push_back(temp);
         }
 
+    APPROACH
+    1)initialise a queue from 1 to n
+    2)while q has more than 1 number
+    3)for k-1 times pop front and add at the back
+    4)pop the last element 
+    5)return first and only element of the queue
+
 */
 
 
