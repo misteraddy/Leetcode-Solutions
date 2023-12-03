@@ -36,13 +36,12 @@ public:
             dq.push_back(i);
         }
         
-        // Simulate the elimination process until only one person remains.
+        //  the elimination process jab tak ek hi aadmi naa reh jaye.
         while(dq.size() != 1) {
             // Retrieve the front person from the deque.
             int temp = dq.front(); 
             dq.pop_front();
             
-            // Initialize a counter for skipping k-1 people.
             int i = 1;
 
             // Skip k-1 people and eliminate the k-th person.
@@ -63,6 +62,7 @@ public:
     }
 };
 
-//time complexity in this question - O(N)  
+//time complexity in this question - O(N * k)  
+//outer loop is running n times while the inner loop is running k times it is skipping the k-1 element and then skip the kth element .
 
 //space complexity in this question - O(1) BECOZ NO EXTRA SPACE IS USED .
