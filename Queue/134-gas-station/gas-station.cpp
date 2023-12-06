@@ -11,7 +11,8 @@ Also if the gas we used to cover all the stations is greater than the cost of ga
     
     //ISS QUESTION KI DIKKAT YE HAI KI TUMHE INTUITION NHI DEVELOP HOGI KI
     //ISME QUEUE USE HOGA
-    
+    //par sir ne bina queue k kar diya
+
     //ERROR JOH MAI KAR RAHA THA
     //deficit mei add hi nhi kar rha tha mai 
     //then balance - deficit check karna tha ki 0 se bada hai yaa nhi
