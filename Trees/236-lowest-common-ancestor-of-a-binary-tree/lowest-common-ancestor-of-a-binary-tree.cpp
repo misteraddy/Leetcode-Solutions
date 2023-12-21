@@ -9,6 +9,9 @@
  */
 class Solution {
 public:
+    
+    //yaa toh p yaa q node return hoga yaa toh NULL return hoga bas.
+    
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         
         if(root == NULL)
@@ -45,7 +48,7 @@ public:
         }
         else
         {
-            //leftAns != NULL && rightAns != NULL
+            //leftAns != NULL && rightAns != NULL 
             
             return root ;
         }
