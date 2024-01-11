@@ -4,13 +4,14 @@ public:
 
         vector<int> temp ;
 
-        vector<int> dp(n+1,-1);
+        // vector<int> dp(n+1,-1);
 
-        int finalans = solve(n, dp);
+        int finalans = solve(n);
 
         return finalans;
     }
 
+#if 0
     int solve(int n, vector<int>& dp)
     {
         if(n == 0)
@@ -37,4 +38,29 @@ public:
 
         return dp[n];
     }
+#endif
+
+    int solve(int n)
+{
+    vector<int> dp(n + 1, -1);
+
+    dp[0] = 0;
+
+    for (int i = 1; i <= n; i++)
+    {
+        int ans = INT_MAX;
+        for (int j = 1; j * j <= i; j++)  // Error kiya re
+        {
+            if (i - j * j >= 0)
+            {
+                int recursionKaAns = dp[i - j * j];
+                ans = min(ans, 1 + recursionKaAns);
+            }
+        }
+        dp[i] = ans;
+    }
+
+    return dp[n];
+}
+
 };
