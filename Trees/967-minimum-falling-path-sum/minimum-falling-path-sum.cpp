@@ -1,0 +1,47 @@
+class Solution {
+public:
+    int minFallingPathSum(vector<vector<int>>& matrix) {
+
+        int n = matrix.size();
+
+        int m = matrix[0].size();
+
+        vector<vector<int>> dp(n,vector<int>(m,-100000));
+
+        int mini = 1e8 ;
+
+        for(int j = 0 ; j < m ; j++)
+        {
+            mini = min(mini, solve(n - 1, j, matrix, dp));
+        }
+
+        return mini;
+    }
+
+    int solve(int i, int j, vector<vector<int>>& matrix,
+              vector<vector<int>>& dp)
+    {
+        if(j < 0 || j >= matrix[0].size())
+        {
+            return 1e8;
+        }
+
+        if(i == 0)
+        {
+            return matrix[0][j];
+        }
+
+        if(dp[i][j] != (-100000))
+        {
+            return dp[i][j];
+        }
+
+        int u = matrix[i][j] + solve(i - 1, j, matrix, dp);
+        int ld = matrix[i][j] + solve(i - 1, j - 1, matrix, dp);
+        int rd = matrix[i][j] + solve(i - 1, j + 1, matrix, dp);
+
+        dp[i][j] = min(u, min(ld, rd));
+        
+        return dp[i][j];
+    }
+};
