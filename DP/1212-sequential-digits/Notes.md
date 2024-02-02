@@ -1,1 +1,1 @@
-<h2>sequential-digits Notes</h2><hr>digit ki hera 
+<h2>sequential-digits Notes</h2><hr>digit ki hera pheri 
