@@ -39,9 +39,9 @@ public:
 
 #endif
 
-//approach 2 : dp 
+//approach 2 : dp : memoisation
 
-// #if 0
+#if 0
 
 int countSubstrings(string s) {
 
@@ -94,7 +94,36 @@ bool check(int i,int j,string s,vector<vector<int>>& dp)
     return dp[i][j] = flag;
 }
 
-// endif
+#endif
+
+//dp : tabulation 
+
+int countSubstrings(string s) {
+    int n = s.length();
+    int count = 0;
+    vector<vector<bool>> dp(n, vector<bool>(n, false)); // Initially all the values are false
+    for (int L = 1; L <= n; L++) {
+        for (int i = 0; i + L <= n; i++) {
+            int j = i + L - 1; // 0 based indexing
+            if (L == 1) { // Changed i == j to L == 1
+                dp[i][j] = true;
+            } else if (L == 2) { // Changed i + 1 == j to L == 2
+                if (s[i] == s[j]) {
+                    dp[i][j] = true;
+                }
+            } else {
+                if (s[i] == s[j] && dp[i + 1][j - 1]) { // Corrected indexing for dp
+                    dp[i][j] = true;
+                }
+            }
+            if (dp[i][j]) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
 
 };
 
