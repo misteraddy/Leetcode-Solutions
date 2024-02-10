@@ -1,6 +1,8 @@
 class Solution {
 public:
 
+#if 0 //string wale approach se 
+
     int expand(string s,int i,int j)
     {
         int count = 0 ;
@@ -34,6 +36,66 @@ public:
 
         return total ;
     }
+
+#endif
+
+//approach 2 : dp 
+
+// #if 0
+
+int countSubstrings(string s) {
+
+    int ans = solve(s);
+
+    return ans ;
+}
+
+int solve(string s)
+{
+    int ans = 0 ;
+
+    int n = s.size();
+
+    vector<vector<int>> dp(n,vector<int>(n,-1));
+
+    for(int i = 0 ; i < n ; i++)
+    {
+        for(int j = i ; j < n ; j++)
+        {
+            if(check(i,j,s,dp))
+            {
+                ans += 1 ;
+            }
+        }
+    }
+
+    return ans ;
+}
+
+bool check(int i,int j,string s,vector<vector<int>>& dp)
+{
+    if(i >= j)
+    {
+        return true;
+    }
+
+    if(dp[i][j] != (-1))
+    {
+        return dp[i][j];
+    }
+
+    bool flag = false ;
+
+    if(s[i] == s[j])
+    {
+        flag = check(i+1,j-1,s,dp);
+    }
+
+    return dp[i][j] = flag;
+}
+
+// endif
+
 };
 
 
