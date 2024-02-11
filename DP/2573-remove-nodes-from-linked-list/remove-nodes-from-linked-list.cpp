@@ -50,6 +50,16 @@ Line 38: Char 19: error: cannot initialize a variable of type 'ListNode *' with 
    38 |         ListNode* dummyNode(-1);
       |                   ^         ~~
 
+    dummyNode aise nhi inititalise karna kabhi - ListNode* dummyNode(-1) ;  or ListNode dummy(-1) ;
 
+    ListNode* dummyNode  ;
+
+    dummyNode -> val = (-1);  this is also wrong
+
+
+    agar karna bhi toh heap mei memory banana 
+    ListNode* dummyNode = new ListNode(-1);
+    
+    aur fir delete kar dena 
 
 */
