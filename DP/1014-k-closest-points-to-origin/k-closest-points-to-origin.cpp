@@ -35,7 +35,7 @@ public:
             int x = points[i][0];
             int y = points[i][1];
 
-            int dist = (x*x + y*y) ;
+            int dist = (x*x + y*y) ; //sqrt lagane se galat answer aa raha tha 
 
             Coordinate point(dist,x,y);
 
