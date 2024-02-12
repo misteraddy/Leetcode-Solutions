@@ -1,3 +1,11 @@
+//brute force will be done using the two nested for loops
+
+//the better solution will be through the hashing 
+
+//this is the optimal solution 
+
+//this is the moore voting algorithm 
+
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
