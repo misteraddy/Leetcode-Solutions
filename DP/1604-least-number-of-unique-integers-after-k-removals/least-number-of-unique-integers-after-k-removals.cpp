@@ -11,6 +11,8 @@ public:
             mpp[element]++;
         }
 
+        //directly map ko sort nhi kar sakte comparator ki help se 
+
         vector<pair<int, int>> temp(mpp.begin(), mpp.end()); //wrote compare here totally wrong
 
         sort(temp.begin(), temp.end(), compare); 
