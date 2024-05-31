@@ -1,60 +1,28 @@
-//brute force will be done using the two nested for loops
-
-//the better solution will be through the hashing 
-
-//this is the optimal solution 
-
-//this is the moore voting algorithm 
-
 class Solution {
 public:
+
+    // this is the better approach 
+
     int majorityElement(vector<int>& nums) {
 
-        int n = nums.size();
+        int N = nums.size();
+
+        map<int,int> mp ; //the insertion in the map takes logn times and we are doing this in N times so N*logn
+
+        for(int element = 0 ; element < N ; element++)
+        {
+            mp[nums[element]]++;
+        }
+
+        for(auto it : mp)
+        {
+            if(it.second > (N / 2))
+            {
+                return it.first ;
+            }
+        }
+
+        return -1 ;
         
-        int cnt = 0 ;
-
-        int ele = 0 ;
-
-        for(int i = 0 ; i < n ; i++)
-        {
-            if(cnt == 0)
-            {
-                ele = nums[i];
-                cnt++;
-            }
-            else
-            {
-                if(ele == nums[i])
-                {
-                    cnt++;
-                }
-                else
-                {
-                    cnt--;
-                }
-            }
-        }
-
-        //yaha pe verification required nhi hai but jiss question mei verify bhi karna padtaa hai 
-        //usme ye bhi karte hai 
-
-        cnt = 0 ;
-
-        for(int i = 0 ; i < n ; i++)
-        {
-            if(ele == nums[i])
-            {
-                cnt++;
-            }
-        }
-
-        if(cnt < n / 2)
-        {
-            return -1 ;
-        }
-
-
-        return ele ;
     }
 };
